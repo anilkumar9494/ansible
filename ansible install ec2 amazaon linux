@@ -1,0 +1,16 @@
+on master amazon-linux
+==========================
+ yum update
+ sudo amazon-linux-extras install ansible2 -y 
+ sudo vi /etc/ansible/hosts [ enter in the file the node_private ip ---> ex: 172.0.30.26  [node1]
+ ssh-keygen 
+ ssh-copy-id [amazonlinux@private_ip_of_managed node ]
+
+
+
+==============================================
+on node amazon-linux 
+======================
+sudo passwd ec2-user         [ give the password with 8 charcters] 123456789
+sudo vi /etc/ssh/sshd_config [ password authentiction as yes]
+sudo systemctl restart sshd
